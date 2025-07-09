@@ -19,6 +19,7 @@ const Login = () => {
             toast.success(response.data.message);
             setEmail("");
             setPassword("");
+            localStorage.setItem("user", JSON.stringify(response.data.registeredUser));
         }
         catch(err){
             console.log(err);

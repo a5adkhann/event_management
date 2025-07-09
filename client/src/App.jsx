@@ -8,8 +8,14 @@ import FeaturedEvents from './pages/FeaturedEvents'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import DashboardLayout from './dashboard/DashboardLayout'
+import AddExpo from './dashboard/pages/AddExpo'
+import ViewExpos from './dashboard/pages/ViewExpos'
 
 const App = () => {
+
+  
+
+
   return (
     <>
         <BrowserRouter>
@@ -21,7 +27,10 @@ const App = () => {
                       <Route path="/contact" element={<Contact/>}></Route>
                   </Route>
 
-                  <Route path="/dashboard" element={<DashboardLayout/>}></Route>
+                  <Route path="/dashboard" element={<DashboardLayout/>}>
+                      <Route path="addexpo" element={<AddExpo/>}></Route>
+                      <Route path="viewexpos" element={<ViewExpos/>}></Route>
+                  </Route>
 
 
                   <Route path="/register" element={<Register/>}></Route>
