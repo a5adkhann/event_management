@@ -3,7 +3,7 @@ import Sidebar from './components/Sidebar';
 import TopNavbar from './components/TopNavbar';
 import { Outlet } from 'react-router-dom';
 
-const DashboardLayout = () => {
+const DashboardLayout = ({logoutUser}) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -11,7 +11,7 @@ const DashboardLayout = () => {
       
       {/* Sidebar */}
       <div className={`${sidebarOpen ? 'block' : 'hidden'} md:block w-64 bg-white shadow-lg z-10`}>
-        <Sidebar closeSidebar={() => setSidebarOpen(false)} />
+        <Sidebar closeSidebar={() => setSidebarOpen(false)} logoutUser={logoutUser} />
       </div>
 
       {/* Main Content */}
